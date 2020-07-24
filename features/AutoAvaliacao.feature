@@ -35,3 +35,5 @@ Scenario: presença de discrepâncias
     Then eu vejo uma mensagem que diz que o aluno “Alan” teve uma auto-avaliação discrepante
     And Lorem ipsum Lorem ipsum
     And Lorem ipsum Lorem ipsum
+
+Scenario: NewNovo
