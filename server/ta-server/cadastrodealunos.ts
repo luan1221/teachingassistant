@@ -27,3 +27,8 @@ export class CadastroDeAlunos {
     return this.alunos;
   }
 }
+
+/*
+ TESTE DO MASTER
+
+*/
