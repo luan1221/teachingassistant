@@ -2,7 +2,10 @@ import express = require('express');
 
 var taserver = express();
 
-var alunos = [{nome:'Paulo',cpf:'683',email:'phmb@cin.br',metas:{'requisitos':'MA'}},{nome:'Mariana',cpf:'456',email:'@mcb@cin.br',metas:{'requisitos':'MPA'}}];
+var alunos = [
+  { nome: 'Paulo', cpf: '683', email: 'phmb@cin.br', metas: { 'requisitos': 'MA' } }, 
+  { nome: 'Mariana', cpf: '456', email: '@mcb@cin.br', metas: { 'requisitos': 'MPA' } }
+];
 
 taserver.get('/', function (req, res) {
   res.send(alunos);
