@@ -11,7 +11,7 @@ export class AlunosComponent implements OnInit {
 
   aluno: Aluno = new Aluno();
   alunos: Aluno[] = [];
-  cpfduplicado: boolean = false;
+  dadosinvalidos: boolean = false;
 
   constructor(private alunoService: AlunoService) { }
 
@@ -23,16 +23,28 @@ export class AlunosComponent implements OnInit {
             this.alunos.push(ar);
             this.aluno = new Aluno();
           } else {
-            this.cpfduplicado = true;
+            this.dadosinvalidos = true;
           }
         },
         msg => { alert(msg.message); }
       );
-      alert("Ja executei o criar e o subscribe!");
+      
+  }
+
+  excluirAluno(a: Aluno): void {
+    this.alunoService.excluir(a.cpf)
+      .subscribe(
+        as => {
+          this.alunos = as;
+        },
+        msg => {
+          alert(msg.message);
+        }
+      )
   }
 
   onMove(): void {
-    this.cpfduplicado = false;
+    this.dadosinvalidos = false;
   }
 
   ngOnInit(): void {
